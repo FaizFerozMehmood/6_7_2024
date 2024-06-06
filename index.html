@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOcal storage in JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="contr" id="loginC">
+    <input class="inputemail" type="text" placeholder="enter your email" id="email">
+    <br>
+    <br>
+    <input class="inputpassword" type="text" name="" id="password" placeholder="••••••••" >
+    <br>
+    <br>
+    <button id="submitbtn" onclick="saveEmail()">Submit</button>
+</div>  
+
+
+
+<div id="home_container">
+    <div>
+      <h1>Hello, Welcome to our page!</h1>
+      <span>
+        <p  id="user_email_display"></p>
+        <button id="logout" onclick="logout()">Logout</button>
+      </span>
+    </div>
+
+    
+      <div>
+        <textarea id="note" >
+Add your notes</textarea>
+        <div>
+          <button
+            onclick="submitNote()"
+          
+          >
+            Submit
+          </button>
+          <ul id="notesList"></ul>
+        </div>
+      </div>
+      
+
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
