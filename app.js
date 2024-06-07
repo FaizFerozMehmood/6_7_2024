@@ -46,14 +46,37 @@ if(userReponse){
     
 
 }
-var savedNotes =localStorage.getItem("notes")|| "notes"
 
 function submitNote(){
+    notes.innerText =""
     localStorage.setItem("notes",notes.value)
+    var savedNotes =localStorage.getItem("notes")
     notesList.innerHTML +=`
     <li id = "listItems"> ${savedNotes}</li>
      `
+     if(notes.value==""){
+         alert("Enter your notes")
+         notesList.innerText.style.display="none"
 
-}
-// submitNote()
+         
+         }
+            
+        
+    }
+submitNote()
+
+// function submitNote(){
+//     var email = localStorage.getItem("email")
+//     var bjct = {
+//         email :email,
+//         notes:notes.value
+//     }
+//     saveValue(bjct);
+//     notes.value= ""
+// }
+// function saveValue(bjct){
+//    var setting= localStorage.setItem("notes",notes)
+//     var notes = localStorage.getItem("notes")
+// }
+
         
