@@ -42,28 +42,30 @@ if(userReponse){
             checkIsLoggedin()
 } 
     
-        
     
 
 }
 
 function submitNote(){
-    notes.innerText =""
+    // notes.innerText =""
     localStorage.setItem("notes",notes.value)
     var savedNotes =localStorage.getItem("notes")
     notesList.innerHTML +=`
     <li id = "listItems"> ${savedNotes}</li>
+
+
      `
-     if(notes.value==""){
-         alert("Enter your notes")
-         notesList.innerText.style.display="none"
+    var email= localStorage.getItem("email") 
+    notesList.innerHTML +=`<p>${email}</p>`
+    //  if(notes.value==""){
+    //      alert("Enter your notes")
+    //      notesList.innerText.style.display="none"
 
          
-         }
+    //      }
             
         
     }
-submitNote()
 
 // function submitNote(){
 //     var email = localStorage.getItem("email")
