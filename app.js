@@ -6,6 +6,7 @@ var user_email_display =document.getElementById('user_email_display')
 var notes = document.getElementById("note")
 var notesList = document.getElementById("notesList")
 
+const emailVerify = localStorage.getItem("email") 
 
 
 function saveEmail(){
@@ -18,7 +19,7 @@ function saveEmail(){
    
 }
 function checkIsLoggedin(){
-    var email = localStorage.getItem('email')
+    var email = localStorage.getItem('email');
     console.log("saved email",email);
     if(email){
         loginC.style.display= "none"
@@ -31,7 +32,6 @@ function checkIsLoggedin(){
     }
 }
 checkIsLoggedin()
-
 function logout(){
    
 var message =  "Are you sure you want to leave this site?"
@@ -46,31 +46,45 @@ if(userReponse){
 
 }
 
-// function submitNote(){
-//     // notes.innerText =""
-//     localStorage.setItem("notes",notes.value)
-//     var savedNotes =localStorage.getItem("notes")
-//     notesList.innerHTML +=`
-//     <li id = "listItems"> ${savedNotes}</li>
-
-//      `
-//     var email= localStorage.getItem("email") 
-//     notesList.innerHTML +=`<p>${email}</p>`
+const arr = JSON.parse(localStorage.getItem("notes")) || [];
+function hello(){
+    // notes.innerText =""
+    let text;
+    arr?.forEach(element => {
+        text += `
+        <li id = "listItems"> ${element.email}</li>
+        <p>${element.notes}</p>
+        `
+    });
+    notesList.innerHTML = text
+    
+    
     
         
-//     }
-
+    }
+hello()
+console.log(arr);
 function submitNote(){
     var email = localStorage.getItem("email")
     var bjct = {
         email :email,
         notes:notes.value
     }
-    savingValueToLocalStorage(bjct)
+    arr.push(bjct)
+    localStorage.setItem("notes",JSON.stringify(arr));
+    console.log(arr);
+    hello()
+    //savingValueToLocalStorage(bjct)
     // notes.value =""
 }
 function savingValueToLocalStorage(bjct){
     var notes = localStorage.getItem("notes")
     console.log(notes);
 
+}
+
+
+const showIdentityHandler = ()=>{
+  const val= arr.filter((single)=> emailVerify == single.email);
+  console.log(val);
 }
