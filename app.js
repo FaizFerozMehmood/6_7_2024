@@ -48,7 +48,7 @@ if(userReponse){
 
 const arr = JSON.parse(localStorage.getItem("notes")) || [];
 function hello(){
-    // notes.innerText =""
+    notes.innerText =""
     let text;
     arr?.forEach(element => {
         text += `
