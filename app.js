@@ -52,8 +52,8 @@ function hello(){
     let text;
     arr?.forEach(element => {
         text += `
-        <li id = "listItems"> ${element.email}</li>
-        <p>${element.notes}</p>
+        <li id = "listItems"> ${element.notes}</li>
+        <p>${element.email}</p>
         `
     });
     notesList.innerHTML = text

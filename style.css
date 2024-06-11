@@ -68,13 +68,16 @@ body, html {
 #logout {
     background: none;
     border: none;
-    color: chocolate;
+    background-color: chocolate;
+    color: white;
     cursor: pointer;
     margin-left: 80%;
     margin-bottom:0;
-    font-size: 18px;
+    font-size: 15px;
     border: 1px solid black;
-    padding: 2px 3px;
+    padding: 2px 10px;
+    border-radius: 15px;
+    
     /* background-color: orange; */
 }
 
@@ -105,9 +108,17 @@ body, html {
 
     #submitbtn {
         width: auto;
+        
     }
 }
 #listItems{
     margin: 10px;
+}
+#hello{
+    padding: 4px 9px;
+    background-color: green;
+    color: white;
+    border-radius: 15px;
+    font-size: 15px;
 }
 
