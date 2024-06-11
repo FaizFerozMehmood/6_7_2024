@@ -71,7 +71,7 @@ function submitNote(){
         email :email,
         notes:notes.value
     }
-    arr.push(bjct)
+    arr?.push(bjct)
     localStorage.setItem("notes",JSON.stringify(arr));
     console.log("arr",arr);
     hello()
