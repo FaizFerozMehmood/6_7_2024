@@ -8,7 +8,7 @@ var notesList = document.getElementById("notesList")
 
 const emailVerify = localStorage.getItem("email") 
 
-const arr = JSON.parse(localStorage.getItem("notes")) || [];
+var arr = JSON.parse(localStorage.getItem("notes")) || [];
 
 function saveEmail(){
     if(!email.value || !password.value)
