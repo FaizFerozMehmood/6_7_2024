@@ -8,6 +8,7 @@ var notesList = document.getElementById("notesList")
 
 const emailVerify = localStorage.getItem("email") 
 
+const arr = JSON.parse(localStorage.getItem("notes")) || [];
 
 function saveEmail(){
     if(!email.value || !password.value)
@@ -42,11 +43,10 @@ if(userReponse){
             checkIsLoggedin()
 } 
     
-    
+
 
 }
 
-const arr = JSON.parse(localStorage.getItem("notes")) || [];
 function hello(){
     notes.innerText =""
     let text;
@@ -65,6 +65,7 @@ function hello(){
 hello()
 console.log(arr);
 function submitNote(){
+    notes.innerText =""
     var email = localStorage.getItem("email")
     var bjct = {
         email :email,
@@ -72,7 +73,7 @@ function submitNote(){
     }
     arr.push(bjct)
     localStorage.setItem("notes",JSON.stringify(arr));
-    console.log(arr);
+    console.log("arr",arr);
     hello()
     //savingValueToLocalStorage(bjct)
     // notes.value =""
